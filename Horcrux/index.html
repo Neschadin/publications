@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html  >
 <head>
-  <!-- Site made with Mobirise Website Builder v5.6.13, https://mobirise.com -->
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="generator" content="Mobirise v5.6.13, mobirise.com">
@@ -38,8 +37,8 @@
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="title col-md-12 col-lg-10">
-                <h3 class="mbr-section-title mbr-fonts-style align-center mb-4 display-2"><strong>Horcrux.</strong><br><strong>С чем его едят?</strong><br><strong>Разворачиваем кластер валидатора.</strong><strong><br></strong></h3>
-                
+                <h3 class="mbr-section-title mbr-fonts-style align-center mb-4 display-2"><strong>Horcrux.</strong><br><strong>С чем его едят?</strong><strong><br></strong></h3>
+                <h4 class="mbr-section-subtitle align-center mbr-fonts-style mb-4 display-5">Или разворачиваем валидатора тестнета HAQQ в кластере.</h4>
                 
             </div>
         </div>
@@ -55,8 +54,8 @@
                 <h4 class="mbr-section-subtitle mbr-fonts-style mb-4 display-5">
                     Салют!
                 </h4>
-                <p class="mbr-text mbr-fonts-style display-7">Поскольку это моя первая статься/гайд на тематику развертывания нод, критика не принимается :D
-<br>На днях, коллега по цеху выкатил статью о развертывании нод по средствам <a href="https://teletype.in/@beething/obiWlwK-PcM" class="text-primary" target="_blank">kubernetes</a> . После кучи вопросов и последующего продолжительного ликбеза, пришел к скромному выводу: что ж, если вы уже "серьезный дядя" в мире мэйннетов, такой подход имеет место быть. Однако, у данной технологии высокий порог входа, так же есть свои + и - . <br>Данная дискуссия напомнила мне о давно возникавшем желании реализовать нативную кластеризацию валидатора. Чем мы сегодня и займемся =) <br>На испытательном полигоне выступят <a href="https://github.com/strangelove-ventures/horcrux" class="text-primary" target="_blank">Horcrux</a> (сервис <a href="https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D0%BE%D1%82%D0%BE%D0%BA%D0%BE%D0%BB_%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B4%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B3%D0%BE_%D0%B2%D1%8B%D1%87%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F" class="text-primary" target="_blank">защищенных многосторонних вычислений</a> для подписания нод Tendermint) и проект <a href="https://islamiccoin.net" class="text-primary" target="_blank">Islamic Coin</a> .</p>
+                <p class="mbr-text mbr-fonts-style display-4">Поскольку это моя первая статься/гайд на тематику развертывания нод, критика не принимается :D
+<br>На днях, коллега по цеху выкатил статью о развертывании нод по средствам <a href="https://teletype.in/@beething/obiWlwK-PcM" class="text-primary" target="_blank">kubernetes</a>&nbsp;(в каком-то смысле - дублирование онных). После кучи вопросов и последующего продолжительного ликбеза, пришел к скромному выводу: что ж, если вы уже "серьезный дядя" в мире мэйннетов, такой подход имеет место быть. Однако, у данной технологии высокий порог входа, так же есть свои + и - . <br>Данная дискуссия напомнила мне о давно возникавшем желании реализовать нативную кластеризацию валидатора. Чем мы сегодня и займемся =) <br>На испытательном полигоне выступят <a href="https://github.com/strangelove-ventures/horcrux" class="text-primary" target="_blank">Horcrux</a> (сервис <a href="https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D0%BE%D1%82%D0%BE%D0%BA%D0%BE%D0%BB_%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B4%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B3%D0%BE_%D0%B2%D1%8B%D1%87%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F" class="text-primary" target="_blank">защищенных многосторонних вычислений</a> для подписания нод Tendermint) и проект <a href="https://islamiccoin.net" class="text-primary" target="_blank">Islamic Coin</a> .</p>
             </div>
         </div>
     </div>
@@ -82,9 +81,9 @@
             <div class="col-md-12 col-lg-10">
                 
                 
-                <p class="mbr-text mbr-fonts-style display-7">Собственно, чем полезен данный сервис? Horcrux - это "мультиподписант" для нод Tendermint, который позволяет:
+                <p class="mbr-text mbr-fonts-style display-4">Собственно, чем полезен данный сервис? Horcrux - это "мультиподписант" для нод Tendermint, который позволяет:
 <br>а) поднять кластер из 2+n нод для лучшего High Availability, за счет отказоустойчивости (единственный минус - аренда всего этого 2+n хозяйства)<br>б) защитить ключ, за счет разбиения его на части (скомпрометировав одну из частей, жулик соснет тунца)
-<br>Можно настраивать порог количества частей ключа, имеющих силу подписи: 2 из 3, 3 из 5, 4 из 7. В подробности углубляться не буду. Для <a href="https://github.com/strangelove-ventures/horcrux/blob/main/docs/signing.md" class="text-primary" target="_blank">пытливых умов</a>.<br>Короче говоря - это уже следующий уровень инфраструктуры валидатора.&nbsp;<br>
+<br>Можно настраивать порог количества частей ключа, имеющих силу подписи: 2 из 3, 3 из 5, 4 из 7. В подробности углубляться не буду. Для <a href="https://github.com/strangelove-ventures/horcrux/blob/main/docs/signing.md" class="text-primary" target="_blank">пытливых умов</a>.<br>Короче говоря, это уже следующий уровень инфраструктуры валидатора.&nbsp;<br>
 <br>Прежде чем приступить к переносу действующего валидатора в кластер, я подготовил 3 синхронизированные ноды на разных серверах. Можно было бы, конечно, заморочиться с построением приватной сети, как то предлагает оф.документация:<br></p>
             </div>
         </div>
@@ -100,12 +99,11 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-12 col-lg-7">
-                <div class="image-wrapper">
+                <div class="image-wrapper" margin>
                     <img src="assets/images/example-network-816x496.png" alt="img">
                     
                 </div>
             </div>
-
         </div>
     </div>
 </section>
@@ -117,7 +115,7 @@
             <div class="col-md-12 col-lg-10">
                 
                 
-                <p class="mbr-text mbr-fonts-style display-7">однако, это тестнет, а у нас задача познакомиться с данной технологией. Соответственно, позволю себе, в каком-то смысле, пренебречь безопасностью и каждую часть подписанта подселю к своей ноде на сервер. В мэйннете, конечно же, лучше действовать по фен-шую.<br>Ставим сервис (<a href="https://github.com/strangelove-ventures/horcrux/releases" class="text-primary" target="_blank">проверить релиз</a>):</p>
+                <p class="mbr-text mbr-fonts-style display-4">однако, это тестнет, а у нас задача познакомиться с данной технологией. Соответственно, позволю себе, в каком-то смысле, пренебречь безопасностью и каждую часть подписанта подселю к своей ноде на сервер. В мэйннете, конечно же, лучше действовать по фен-шую.<br>Ставим сервис (<a href="https://github.com/strangelove-ventures/horcrux/releases" class="text-primary" target="_blank">проверить релиз</a>):</p>
             </div>
         </div>
     </div>
@@ -130,7 +128,7 @@
             <div class="col-md-12 col-lg-10">
                 
                 
-                <p class="mbr-text mbr-fonts-style display-7">wget https://github.com/strangelove-ventures/horcrux/releases/download/v2.0.0/horcrux_2.0.0_linux_amd64.tar.gz
+                <p class="mbr-text mbr-fonts-style display-4">wget https://github.com/strangelove-ventures/horcrux/releases/download/v2.0.0/horcrux_2.0.0_linux_amd64.tar.gz
 <br>tar -xzf horcrux_2.0.0_linux_amd64.tar.gz
 <br>mv horcrux /usr/bin/horcrux &amp;&amp; rm horcrux_2.0.0_linux_amd64.tar.gz README.md LICENSE.md</p>
             </div>
@@ -145,7 +143,7 @@
             <div class="col-md-12 col-lg-10">
                 
                 
-                <p class="mbr-text mbr-fonts-style display-7">Создаем сервис:</p>
+                <p class="mbr-text mbr-fonts-style display-4">Создаем сервис:</p>
             </div>
         </div>
     </div>
@@ -158,7 +156,7 @@
             <div class="col-md-12 col-lg-10">
                 
                 
-                <p class="mbr-text mbr-fonts-style display-7">tee /etc/systemd/system/horcrux.service &gt; /dev/null &lt;&lt;EOF<br>[Unit]
+                <p class="mbr-text mbr-fonts-style display-4">tee /etc/systemd/system/horcrux.service &gt; /dev/null &lt;&lt;EOF<br>[Unit]
 <br>Description=MPC Signer node
 <br>After=network.target
 <br>[Service]
@@ -181,7 +179,7 @@
             <div class="col-md-12 col-lg-10">
                 
                 
-                <p class="mbr-text mbr-fonts-style display-7">Инициализируем конфигурацию на каждом сервере для своей же ноды. Для каждого сервера своя команда:</p>
+                <p class="mbr-text mbr-fonts-style display-4">Инициализируем конфигурацию на каждом сервере для своей же ноды. Для каждого сервера своя команда:</p>
             </div>
         </div>
     </div>
@@ -194,7 +192,7 @@
             <div class="col-md-12 col-lg-10">
                 
                 
-                <p class="mbr-text mbr-fonts-style display-7"># подписант-1 будет коннектиться к ноде c ID-1<br>horcrux config init haqq_53211-1 "tcp://127.0.0.1:1234" -c -p "tcp://10.168.1.2:2222|2,tcp://10.168.1.3:2222|3" -l "tcp://10.168.1.1:2222" -t 2 --timeout 1500ms
+                <p class="mbr-text mbr-fonts-style display-4"># подписант-1 будет коннектиться к ноде c ID-1<br>horcrux config init haqq_53211-1 "tcp://127.0.0.1:1234" -c -p "tcp://10.168.1.2:2222|2,tcp://10.168.1.3:2222|3" -l "tcp://10.168.1.1:2222" -t 2 --timeout 1500ms
 <br><br># подписант-2 будет коннектиться к ноде c ID-2<br>horcrux config init haqq_53211-1 "tcp://127.0.0.1:1234" -c -p "tcp://10.168.1.1:2222|1,tcp://10.168.1.3:2222|3" -l "tcp://10.168.1.2:2222" -t 2 --timeout 1500ms
 <br><br># подписант-3 будет коннектиться к ноде c ID-3<br>horcrux config init haqq_53211-1 "tcp://127.0.0.1:1234" -c -p "tcp://10.168.1.1:2222|1,tcp://10.168.1.2:2222|2" -l "tcp://10.168.1.3:2222" -t 2 --timeout 1500ms</p>
             </div>
@@ -209,7 +207,7 @@
             <div class="col-md-12 col-lg-10">
                 
                 
-                <p class="mbr-text mbr-fonts-style display-7">На каждой ноде включаем приемник валидатора:</p>
+                <p class="mbr-text mbr-fonts-style display-4">На каждой ноде включаем приемник валидатора:</p>
             </div>
         </div>
     </div>
@@ -222,7 +220,7 @@
             <div class="col-md-12 col-lg-10">
                 
                 
-                <p class="mbr-text mbr-fonts-style display-7">sed -i 's#priv_validator_laddr = ""#priv_validator_laddr = "tcp://127.0.0.1:1234"#g' $HOME/.haqqd/config/config.toml<br><br>systemctl restart haqqd &amp;&amp; journalctl -u haqqd -f&nbsp;<br></p>
+                <p class="mbr-text mbr-fonts-style display-4">sed -i 's#priv_validator_laddr = ""#priv_validator_laddr = "tcp://127.0.0.1:1234"#g' $HOME/.haqqd/config/config.toml<br><br>systemctl restart haqqd &amp;&amp; journalctl -u haqqd -f&nbsp;<br></p>
             </div>
         </div>
     </div>
@@ -235,7 +233,7 @@
             <div class="col-md-12 col-lg-10">
                 
                 
-                <p class="mbr-text mbr-fonts-style display-7">Далее с действующего валидатора ручками скачиваем&nbsp;priv_validator_key.json, заливаем в $HOME/.horcrux/ на любой из серверов (для удобства на 1) и режем на 3 части:</p>
+                <p class="mbr-text mbr-fonts-style display-4">Далее с действующего валидатора ручками скачиваем&nbsp;priv_validator_key.json, заливаем в $HOME/.horcrux/ на любой из серверов (для удобства на 1) и режем на 3 части:</p>
             </div>
         </div>
     </div>
@@ -248,7 +246,7 @@
             <div class="col-md-12 col-lg-10">
                 
                 
-                <p class="mbr-text mbr-fonts-style display-7">cd .horcrux<br>horcrux create-shares priv_validator_key.json 2 3</p>
+                <p class="mbr-text mbr-fonts-style display-4">cd .horcrux<br>horcrux create-shares priv_validator_key.json 2 3</p>
             </div>
         </div>
     </div>
@@ -261,7 +259,7 @@
             <div class="col-md-12 col-lg-10">
                 
                 
-                <p class="mbr-text mbr-fonts-style display-7">На выходе 3 части:</p>
+                <p class="mbr-text mbr-fonts-style display-4">На выходе 3 части:</p>
             </div>
         </div>
     </div>
@@ -274,7 +272,7 @@
             <div class="col-md-12 col-lg-10">
                 
                 
-                <p class="mbr-text mbr-fonts-style display-7">ls
+                <p class="mbr-text mbr-fonts-style display-4">ls
 <br>priv_validator_key.json
 <br>private_share_1.json
 <br>private_share_2.json
@@ -291,7 +289,7 @@
             <div class="col-md-12 col-lg-10">
                 
                 
-                <p class="mbr-text mbr-fonts-style display-7">Первую часть переименовываем в&nbsp;share.json и оставляем на месте&nbsp;в $HOME/.horcrux/ , остальные две части скачиваем себе на компьютер, так же переименовываем в share.json и заливаем на каждый сервер,&nbsp;в такой же каталог, в соответствии с ID. То есть сопоставляем:<br>private_share_1.json =  ID-1 =&gt; $HOME/.horcrux/share.json<br>private_share_2.json = ID-2 =&gt; $HOME/.horcrux/share.json<br>private_share_3.json = ID-3 =&gt; $HOME/.horcrux/share.json<br>На будущее, внутри каждой части ключа, в конце контекста присутствует ID.<br><br>Далее самое интересное. Что бы валидатор не попал в тюрьму, делать надо все внимательно и не считать мух. И все же, будьте готовы в любой момент апнуть валидатора, если что-то пойдет по стекловате..<br>Стопаем действующего валидатора, открываем файл&nbsp;$HOME/.haqqd/data/priv_validator_state.json , в нем содержится информация о последней подписи действовашим валидатором:<br></p>
+                <p class="mbr-text mbr-fonts-style display-4">Первую часть переименовываем в&nbsp;share.json и оставляем на месте&nbsp;в $HOME/.horcrux/ , остальные две части скачиваем себе на компьютер, так же переименовываем в share.json и заливаем на каждый сервер,&nbsp;в такой же каталог, в соответствии с ID. То есть сопоставляем:<br>private_share_1.json =  ID-1 =&gt; $HOME/.horcrux/share.json<br>private_share_2.json = ID-2 =&gt; $HOME/.horcrux/share.json<br>private_share_3.json = ID-3 =&gt; $HOME/.horcrux/share.json<br>На будущее, внутри каждой части ключа, в конце контекста присутствует ID.<br><br>Далее самое интересное. Что бы валидатор не попал в тюрьму, делать надо все внимательно и не считать мух. И все же, будьте готовы в любой момент апнуть валидатора, если что-то пойдет по стекловате..<br>Стопаем действующего валидатора, открываем файл&nbsp;$HOME/.haqqd/data/priv_validator_state.json , в нем содержится информация о последней подписи действовашим валидатором:<br></p>
             </div>
         </div>
     </div>
@@ -304,7 +302,7 @@
             <div class="col-md-12 col-lg-10">
                 
                 
-                <p class="mbr-text mbr-fonts-style display-7">{
+                <p class="mbr-text mbr-fonts-style display-4">{
 <br>  "height": "361402",
 <br>  "round": 0,
 <br>  "step": 3,
@@ -323,7 +321,7 @@
             <div class="col-md-12 col-lg-10">
                 
                 
-                <p class="mbr-text mbr-fonts-style display-7">Копируем поля:<br><br>&nbsp; "height": "361402",
+                <p class="mbr-text mbr-fonts-style display-4">Копируем поля:<br><br>&nbsp; "height": "361402",
 <br>&nbsp; "round": 0,&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(значение этого поля оборачиваем в кавычки ! )<br>&nbsp; "step": 3,<br><br>и вставляем на каждой подготовленной ноде в оба файла (что бы валидатор завелся с того же места)<br> $HOME/.horcrux/state/haqq_53211-1_priv_validator_state.json<br> $HOME/.horcrux/state/haqq_53211-1_share_sign_state.json<br><br>Должно получиться:</p>
             </div>
         </div>
@@ -337,7 +335,7 @@
             <div class="col-md-12 col-lg-10">
                 
                 
-                <p class="mbr-text mbr-fonts-style display-7">{
+                <p class="mbr-text mbr-fonts-style display-4">{
 <br>"height": "361402",
 <br>"round": "0",
 <br>"step": 3,
@@ -354,7 +352,7 @@
             <div class="col-md-12 col-lg-10">
                 
                 
-                <p class="mbr-text mbr-fonts-style display-7">Сохраняем и:</p>
+                <p class="mbr-text mbr-fonts-style display-4">Сохраняем и:</p>
             </div>
         </div>
     </div>
@@ -380,7 +378,7 @@
             <div class="col-md-12 col-lg-10">
                 
                 
-                <p class="mbr-text mbr-fonts-style display-7">Поздравляю, господа мамкины хацкеры! У вас лэвэл ап =)<br>Не забудьте настроить fw, что бы ноды по порту 2222 общались только друг с другом.<br>Повторюсь, этот гайд для ознакомления с технологией. Хотя, как по мне, он получился более юзерфрэндли, нежели оф.документация. Но более детального погружения покурить её стоит.<br><br>На сим откланиваюсь. Всегда ваш...<br><br></p>
+                <p class="mbr-text mbr-fonts-style display-7">Поздравляю! Господа мамкины хацкеры, у вас лэвэл ап =)<br>Не забудьте настроить fw, что бы ноды по порту 2222 общались только друг с другом.<br>Повторюсь, этот гайд для ознакомления с технологией. Хотя, как по мне, он получился более юзерфрэндли, нежели оф.документация. Но для более детального погружения покурить её все же стоит.<br><br>За сим откланиваюсь. Всегда ваш...<br><br></p>
             </div>
         </div>
     </div>
@@ -398,7 +396,7 @@
                 <div class="card-wrapper">
                     <div class="card-box align-left">
                         
-                        <p class="mbr-text mbr-fonts-style display-5"><a href="http://stake.broker" class="text-white" target="_blank">StakeBroker</a> | <a href="https://www.nodesblocks.dev/" class="text-white" target="_blank">NodesBlocks team</a><br><a href="https://t.me/StakeBroker" class="text-white" target="_blank">@StakeBroker</a>&nbsp;| <a href="https://discord.gg/Mtp2c9BAJN" class="text-white" target="_blank">Team discord server</a></p>
+                        <p class="mbr-text mbr-fonts-style display-5"><a href="http://stake.broker" class="text-white" target="_blank">StakeBroker</a> | <a href="https://www.nodesblocks.dev/" class="text-white" target="_blank">NodesBlocks team</a>&nbsp;| <a href="https://discord.gg/Mtp2c9BAJN" class="text-white">team Discord server</a><br><a href="tg://resolve?domain=stakebroker" class="text-white text-primary">@StakeBroker</a>&nbsp;| <a href="https://discordapp.com/users/966770759261376603/" class="text-white" target="_blank">Alexneshko#</a></p>
                         
                     </div>
                 </div>
