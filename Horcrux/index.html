@@ -128,9 +128,10 @@
             <div class="col-md-12 col-lg-10">
                 
                 
-                <p class="mbr-text mbr-fonts-style display-4">wget https://github.com/strangelove-ventures/horcrux/releases/download/v2.0.0/horcrux_2.0.0_linux_amd64.tar.gz
-<br>tar -xzf horcrux_2.0.0_linux_amd64.tar.gz
-<br>mv horcrux /usr/bin/horcrux &amp;&amp; rm horcrux_2.0.0_linux_amd64.tar.gz README.md LICENSE.md</p>
+                <p class="mbr-text mbr-fonts-style display-4">cd $HOME
+<br>git clone https://github.com/strangelove-ventures/horcrux
+<br>cd horcrux
+<br>make install
             </div>
         </div>
     </div>
@@ -162,7 +163,7 @@
 <br>[Service]
 <br>Type=simple
 <br>User=root
-<br>ExecStart=/usr/bin/horcrux cosigner start
+<br>ExecStart=$HOME/go/bin/horcrux cosigner start
 <br>Restart=always<br>RestartSec=3
 <br>LimitNOFILE=4096
 <br>[Install]
