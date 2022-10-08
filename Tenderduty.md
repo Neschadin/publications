@@ -10,7 +10,7 @@
 Приступим!
 
 #### Компилируем бинарник:
-```plaintext
+```shell
 cd
 git clone https://github.com/blockpane/tenderduty
 cd tenderduty
@@ -20,7 +20,7 @@ cd
 
 #### Создаем файл конфигурации. 
 ##### не забудьте подставить свои значения:
-```plaintext
+```shell
 mkdir $HOME/.tenderduty &&\
 
 tee $HOME/.tenderduty/config.yml << EOF
@@ -69,7 +69,7 @@ EOF
 ```
 
 #### Запускаем как сервис:
-```plaintext
+```shell
 tee /etc/systemd/system/tenderduty.service << EOF
 [Unit]
 Description=Tenderduty
