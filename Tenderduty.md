@@ -40,7 +40,7 @@ chains:
 
   "haqq":
     chain_id: haqq_54211-2
-    № ваш валидатор
+    # ваш валидатор
     valoper_address: haqqvaloper1ylj36axpu99p9aanetr4c9ltfhd97yym8xzdq5
     public_fallback: yes
 
